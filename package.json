@@ -1,0 +1,37 @@
+{
+    "name": "insta_app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "now-build": "npm run build",
+        "dev": "webpack-dev-server",
+        "build": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-react": "^7.10.4",
+        "babel-loader": "^8.1.0",
+        "html-webpack-plugin": "^4.4.1",
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0",
+        "wepack-cli": "0.0.1-security"
+    },
+    "dependencies": {
+        "@apollo/react-hooks": "^4.0.0",
+        "apollo-boost": "^0.4.9",
+        "graphql": "^15.3.0",
+        "intersection-observer": "^0.11.0",
+        "react": "^16.13.1",
+        "react-apollo": "^3.1.5",
+        "react-dom": "^16.13.1",
+        "react-icons": "^3.11.0",
+        "styled-components": "^5.2.0"
+    }
+}
