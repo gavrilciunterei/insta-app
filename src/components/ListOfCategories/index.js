@@ -47,7 +47,7 @@ export const ListOfCategories = () => {
         </Item>
       ) : (
         categories.map((category) => (
-          <Item key={category}>
+          <Item key={category.id}>
             <Category {...category} />
           </Item>
         ))

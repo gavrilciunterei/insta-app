@@ -4,6 +4,7 @@ import { ListOfCategories } from "./components/ListOfCategories";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import { ListOfPhotoCards } from "./components/ListOfPhotoCards";
 import Logo from "./components/Logo";
+import { PhotoCardDetails } from "./components/PhotoCardDetails";
 
 export default function App() {
   // sacamos la id de la url
@@ -14,8 +15,14 @@ export default function App() {
     <div>
       <GlobalStyle />
       <Logo />
-      <ListOfCategories />
-      <ListOfPhotoCards categoryId={2} />
+      {detailId ? (
+        <PhotoCardDetails id={detailId} />
+      ) : (
+        <>
+          <ListOfCategories />
+          <ListOfPhotoCards categoryId={3} />
+        </>
+      )}
     </div>
   );
 }
