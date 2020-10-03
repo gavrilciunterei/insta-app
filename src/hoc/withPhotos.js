@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
 export function useGetPhotos(categoryId) {
-  const getPhotos = gql`
+  const GET_PHOTOS = gql`
     query getPhotos($categoryId: ID) {
       photos(categoryId: $categoryId) {
         id
@@ -16,7 +16,9 @@ export function useGetPhotos(categoryId) {
     }
   `;
 
-  const { loading, data } = useQuery(getPhotos, { variables: { categoryId } });
+  const { loading, data, error } = useQuery(GET_PHOTOS, {
+    variables: { categoryId },
+  });
 
-  return { loading, data };
+  return { loading, data, error };
 }
