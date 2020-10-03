@@ -1,10 +1,9 @@
 import React from "react";
-
-import { ListOfCategories } from "./components/ListOfCategories";
 import { GlobalStyle } from "./styles/GlobalStyle";
-import { ListOfPhotoCards } from "./components/ListOfPhotoCards";
 import Logo from "./components/Logo";
 import { PhotoCardDetails } from "./components/PhotoCardDetails";
+import Home from "./pages/Home";
+import { Router } from "@reach/router";
 
 export default function App() {
   // sacamos la id de la url
@@ -18,10 +17,10 @@ export default function App() {
       {detailId ? (
         <PhotoCardDetails id={detailId} />
       ) : (
-        <>
-          <ListOfCategories />
-          <ListOfPhotoCards categoryId={3} />
-        </>
+        <Router>
+          <Home path="/" />
+          <Home path="/pet/:id" />
+        </Router>
       )}
     </div>
   );
