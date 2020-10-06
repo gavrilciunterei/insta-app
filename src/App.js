@@ -9,10 +9,7 @@ import Detail from "./pages/Detail";
 import { User } from "./pages/User";
 import { NotRegisteredUser } from "./pages/NotRegisteredUser";
 import { Favs } from "./pages/Favs";
-
-const UserLogged = ({ children }) => {
-  return children({ isAuth: true });
-};
+import Context from "./Context";
 
 export default function App() {
   return (
@@ -25,7 +22,7 @@ export default function App() {
         <Detail path="/detail/:detailId" />
       </Router>
 
-      <UserLogged>
+      <Context.Consumer>
         {({ isAuth }) =>
           isAuth ? (
             <Router>
@@ -39,7 +36,7 @@ export default function App() {
             </Router>
           )
         }
-      </UserLogged>
+      </Context.Consumer>
 
       <NavBar />
     </div>
